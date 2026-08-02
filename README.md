@@ -4,7 +4,7 @@ Easy-access model presets for Cursor — switch models and reasoning levels from
 
 > **Requires [Cursor IDE](https://cursor.com).** This extension uses Cursor-only APIs and will not switch models in stock VS Code.
 
-![Cursor Quick Presets in Explorer](media/screenshot.png)
+![Cursor Quick Presets demo](media/demo.gif)
 
 ## Features
 

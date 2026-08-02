@@ -34,12 +34,12 @@ npm install
 npx vsce package --no-dependencies
 ```
 
-This creates `cursor-quick-presets-0.1.2.vsix`.
+This creates `cursor-quick-presets-0.1.3.vsix`.
 
 Install for a smoke test in Cursor:
 
 ```bash
-cursor --install-extension ./cursor-quick-presets-0.1.2.vsix
+cursor --install-extension ./cursor-quick-presets-0.1.3.vsix
 ```
 
 (Or use **Extensions: Install from VSIX…**)
@@ -61,7 +61,7 @@ This extension **only works in Cursor**. Say that clearly in the Marketplace des
 If Marketplace review pushes back on VS Code incompatibility, also publish to [Open VSX](https://open-vsx.org/) (`ovsx publish`), which many Cursor users can install from.
 
 ```bash
-npx ovsx publish cursor-quick-presets-0.1.2.vsix -p YOUR_OPEN_VSX_TOKEN
+npx ovsx publish cursor-quick-presets-0.1.3.vsix -p YOUR_OPEN_VSX_TOKEN
 ```
 
 ## Version bumps

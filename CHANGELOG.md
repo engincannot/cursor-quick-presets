@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3
+
+- Replace README screenshot with demo GIF
+
 ## 0.1.2
 
 - Renamed to Cursor Quick Presets

@@ -1,0 +1,202 @@
+{
+  "name": "cursor-quick-presets",
+  "displayName": "Cursor Quick Presets",
+  "description": "Easy-access model presets for Cursor. Switch models and reasoning levels from the Explorer sidebar.",
+  "version": "0.1.2",
+  "publisher": "EnginCannot",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/engincannot/cursor-quick-presets"
+  },
+  "bugs": {
+    "url": "https://github.com/engincannot/cursor-quick-presets/issues"
+  },
+  "homepage": "https://github.com/engincannot/cursor-quick-presets#readme",
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#1B1F24",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "cursor",
+    "cursor ide",
+    "model",
+    "reasoning",
+    "agent",
+    "composer",
+    "switch",
+    "preset",
+    "quick"
+  ],
+  "qna": "marketplace",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "type": "webview",
+          "id": "cursorQuickPresets.view",
+          "name": "Cursor Quick Presets",
+          "visibility": "visible"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "cursorQuickPresets.openEditor",
+        "title": "Open as Editor",
+        "category": "Cursor Quick Presets"
+      },
+      {
+        "command": "cursorQuickPresets.focus",
+        "title": "Focus",
+        "category": "Cursor Quick Presets"
+      },
+      {
+        "command": "cursorQuickPresets.configureButton",
+        "title": "Configure Preset",
+        "category": "Cursor Quick Presets"
+      },
+      {
+        "command": "cursorQuickPresets.refreshCatalog",
+        "title": "Refresh Model Catalog",
+        "category": "Cursor Quick Presets"
+      }
+    ],
+    "configuration": {
+      "title": "Cursor Quick Presets",
+      "properties": {
+        "cursorQuickPresets.buttons": {
+          "type": "array",
+          "description": "Model presets. Add or remove as many as you like.",
+          "default": [
+            {
+              "label": "Sol High",
+              "modelId": "gpt-5.6-sol",
+              "params": [
+                {
+                  "id": "context",
+                  "value": "272k"
+                },
+                {
+                  "id": "reasoning",
+                  "value": "high"
+                },
+                {
+                  "id": "fast",
+                  "value": "false"
+                }
+              ]
+            },
+            {
+              "label": "Opus High",
+              "modelId": "claude-opus-5",
+              "params": [
+                {
+                  "id": "thinking",
+                  "value": "true"
+                },
+                {
+                  "id": "context",
+                  "value": "300k"
+                },
+                {
+                  "id": "effort",
+                  "value": "high"
+                },
+                {
+                  "id": "fast",
+                  "value": "false"
+                }
+              ]
+            },
+            {
+              "label": "Grok High Fast",
+              "modelId": "grok-4.5",
+              "params": [
+                {
+                  "id": "effort",
+                  "value": "high"
+                },
+                {
+                  "id": "fast",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "label": "Composer",
+              "modelId": "composer-2.5",
+              "params": [
+                {
+                  "id": "fast",
+                  "value": "false"
+                }
+              ]
+            }
+          ],
+          "items": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "modelId": {
+                "type": "string"
+              },
+              "params": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "value"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "label",
+              "modelId",
+              "params"
+            ]
+          }
+        },
+        "cursorQuickPresets.showToasts": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show a status-bar toast when switching models from a preset"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "package": "vsce package --no-dependencies",
+    "publish": "vsce publish --no-dependencies",
+    "check": "node -e \"require('./src/catalog'); require('./src/logos'); console.log('ok')\""
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.3.2"
+  }
+}

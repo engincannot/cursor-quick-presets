@@ -1,0 +1,13 @@
+.git/**
+.github/**
+.vscode/**
+.vscode-test/**
+.gitignore
+.DS_Store
+**/*.map
+**/*.vsix
+media/icon.svg
+.vscodeignore
+tsconfig.json
+eslint.config.*
+node_modules/**

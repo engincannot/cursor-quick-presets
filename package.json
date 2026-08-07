@@ -2,7 +2,7 @@
   "name": "cursor-quick-presets",
   "displayName": "Cursor Quick Presets",
   "description": "Easy-access model presets for Cursor. Switch models and reasoning levels from the Explorer sidebar.",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "publisher": "EnginCannot",
   "license": "MIT",
   "repository": {
@@ -33,7 +33,10 @@
     "composer",
     "switch",
     "preset",
-    "quick"
+    "quick",
+    "hotkey",
+    "stream deck",
+    "kimi"
   ],
   "qna": "marketplace",
   "activationEvents": [
@@ -53,13 +56,8 @@
     },
     "commands": [
       {
-        "command": "cursorQuickPresets.openEditor",
-        "title": "Open as Editor",
-        "category": "Cursor Quick Presets"
-      },
-      {
         "command": "cursorQuickPresets.focus",
-        "title": "Focus",
+        "title": "Show in Explorer",
         "category": "Cursor Quick Presets"
       },
       {
@@ -70,6 +68,56 @@
       {
         "command": "cursorQuickPresets.refreshCatalog",
         "title": "Refresh Model Catalog",
+        "category": "Cursor Quick Presets"
+      },
+      {
+        "command": "cursorQuickPresets.applyPreset",
+        "title": "Apply Preset",
+        "category": "Cursor Quick Presets"
+      },
+      {
+        "command": "cursorQuickPresets.applyPreset.1",
+        "title": "Apply Preset 1",
+        "category": "Cursor Quick Presets"
+      },
+      {
+        "command": "cursorQuickPresets.applyPreset.2",
+        "title": "Apply Preset 2",
+        "category": "Cursor Quick Presets"
+      },
+      {
+        "command": "cursorQuickPresets.applyPreset.3",
+        "title": "Apply Preset 3",
+        "category": "Cursor Quick Presets"
+      },
+      {
+        "command": "cursorQuickPresets.applyPreset.4",
+        "title": "Apply Preset 4",
+        "category": "Cursor Quick Presets"
+      },
+      {
+        "command": "cursorQuickPresets.applyPreset.5",
+        "title": "Apply Preset 5",
+        "category": "Cursor Quick Presets"
+      },
+      {
+        "command": "cursorQuickPresets.applyPreset.6",
+        "title": "Apply Preset 6",
+        "category": "Cursor Quick Presets"
+      },
+      {
+        "command": "cursorQuickPresets.applyPreset.7",
+        "title": "Apply Preset 7",
+        "category": "Cursor Quick Presets"
+      },
+      {
+        "command": "cursorQuickPresets.applyPreset.8",
+        "title": "Apply Preset 8",
+        "category": "Cursor Quick Presets"
+      },
+      {
+        "command": "cursorQuickPresets.applyPreset.9",
+        "title": "Apply Preset 9",
         "category": "Cursor Quick Presets"
       }
     ],

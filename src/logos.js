@@ -25,6 +25,14 @@ function resolveLogoKey(modelId = '', vendorName = '') {
     return 'gemini';
   }
   if (
+    id.startsWith('kimi') ||
+    id.includes('kimi') ||
+    vendor.includes('moonshot') ||
+    vendor.includes('kimi')
+  ) {
+    return 'kimi';
+  }
+  if (
     id.startsWith('gpt') ||
     id.includes('codex') ||
     id.includes('-sol') ||
@@ -43,6 +51,7 @@ const LOGO_COLOR = {
   grok: 'var(--fg)',
   cursor: 'var(--fg)',
   gemini: '#8AB4F8',
+  kimi: 'var(--fg)',
   generic: 'var(--muted)',
 };
 
@@ -55,6 +64,7 @@ module.exports = {
     'grok.svg',
     'cursor.svg',
     'gemini.svg',
+    'kimi.svg',
     'generic.svg',
   ],
 };

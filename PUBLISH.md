@@ -5,26 +5,14 @@
 - **Display name:** Cursor Quick Presets  
 - **Package id:** `cursor-quick-presets`  
 - **Full marketplace id:** `EnginCannot.cursor-quick-presets`
-
-Alternatives if `cursor-quick-presets` is taken: `quick-presets`, `cursor-model-presets`.
+- **GitHub:** https://github.com/engincannot/cursor-quick-presets
 
 ## Before you publish
 
-1. Publisher is already set in `package.json` (`EnginCannot`)
-2. Optional but recommended: add to `package.json`:
-
-```json
-"repository": {
-  "type": "git",
-  "url": "https://github.com/engincannot/cursor-quick-presets"
-},
-"bugs": {
-  "url": "https://github.com/engincannot/cursor-quick-presets/issues"
-},
-"homepage": "https://github.com/engincannot/cursor-quick-presets#readme"
-```
-
-3. Commit the repo and push
+1. Publisher is set in `package.json` (`EnginCannot`)
+2. Repository / bugs / homepage URLs point at `engincannot/cursor-quick-presets`
+3. Bump `version` in `package.json` and add a `CHANGELOG.md` entry
+4. Commit and push to GitHub as **engincannot**
 
 ## Package locally
 
@@ -34,15 +22,28 @@ npm install
 npx vsce package --no-dependencies
 ```
 
-This creates `cursor-quick-presets-0.1.3.vsix`.
+This creates `cursor-quick-presets-<version>.vsix` (currently `0.1.4`).
 
 Install for a smoke test in Cursor:
 
 ```bash
-cursor --install-extension ./cursor-quick-presets-0.1.3.vsix
+cursor --install-extension ./cursor-quick-presets-0.1.4.vsix --force
 ```
 
 (Or use **Extensions: Install from VSIX…**)
+
+Reload the window after install. Avoid keeping an older side-by-side copy under `~/.cursor/extensions` — duplicate installs can fail with `cursorQuickPresets.view is already registered`.
+
+## Publish to GitHub
+
+```bash
+git add -A
+git commit -m "Release 0.1.4: hotkeys, reorder, Kimi logo"
+git push origin main
+gh release create v0.1.4 ./cursor-quick-presets-0.1.4.vsix --title "v0.1.4" --notes-file CHANGELOG.md
+```
+
+Use the **engincannot** GitHub account (`gh auth switch -u engincannot` if needed).
 
 ## Publish to VS Code Marketplace
 
@@ -61,11 +62,11 @@ This extension **only works in Cursor**. Say that clearly in the Marketplace des
 If Marketplace review pushes back on VS Code incompatibility, also publish to [Open VSX](https://open-vsx.org/) (`ovsx publish`), which many Cursor users can install from.
 
 ```bash
-npx ovsx publish cursor-quick-presets-0.1.3.vsix -p YOUR_OPEN_VSX_TOKEN
+npx ovsx publish cursor-quick-presets-0.1.4.vsix -p YOUR_OPEN_VSX_TOKEN
 ```
 
 ## Version bumps
 
 1. Update `version` in `package.json`
 2. Add an entry to `CHANGELOG.md`
-3. `npx vsce publish --no-dependencies`
+3. Push GitHub + `npx vsce publish --no-dependencies`

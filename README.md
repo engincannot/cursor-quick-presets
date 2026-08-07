@@ -72,7 +72,7 @@ You can also bind **Keyboard Shortcuts** to `Cursor Quick Presets: Apply Preset 
 ## Install from VSIX
 
 ```bash
-cursor --install-extension ./cursor-quick-presets-0.1.4.vsix --force
+cursor --install-extension ./cursor-quick-presets-0.1.5.vsix --force
 ```
 
 Then reload the window.

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.5
+
+- Updated demo GIF (hotkeys, reorder, Kimi preset)
+
 ## 0.1.4
 
 - Per-preset hotkeys (Set/Clear from configure menu) for Stream Deck and keyboard

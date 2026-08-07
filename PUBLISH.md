@@ -22,12 +22,12 @@ npm install
 npx vsce package --no-dependencies
 ```
 
-This creates `cursor-quick-presets-<version>.vsix` (currently `0.1.4`).
+This creates `cursor-quick-presets-<version>.vsix` (currently `0.1.5`).
 
 Install for a smoke test in Cursor:
 
 ```bash
-cursor --install-extension ./cursor-quick-presets-0.1.4.vsix --force
+cursor --install-extension ./cursor-quick-presets-0.1.5.vsix --force
 ```
 
 (Or use **Extensions: Install from VSIX…**)
@@ -38,9 +38,9 @@ Reload the window after install. Avoid keeping an older side-by-side copy under 
 
 ```bash
 git add -A
-git commit -m "Release 0.1.4: hotkeys, reorder, Kimi logo"
+git commit -m "Release 0.1.5: updated demo GIF"
 git push origin main
-gh release create v0.1.4 ./cursor-quick-presets-0.1.4.vsix --title "v0.1.4" --notes-file CHANGELOG.md
+gh release create v0.1.5 ./cursor-quick-presets-0.1.5.vsix --title "v0.1.5" --notes-file CHANGELOG.md
 ```
 
 Use the **engincannot** GitHub account (`gh auth switch -u engincannot` if needed).
@@ -62,7 +62,7 @@ This extension **only works in Cursor**. Say that clearly in the Marketplace des
 If Marketplace review pushes back on VS Code incompatibility, also publish to [Open VSX](https://open-vsx.org/) (`ovsx publish`), which many Cursor users can install from.
 
 ```bash
-npx ovsx publish cursor-quick-presets-0.1.4.vsix -p YOUR_OPEN_VSX_TOKEN
+npx --yes ovsx publish cursor-quick-presets-0.1.5.vsix -p YOUR_OPEN_VSX_TOKEN
 ```
 
 ## Version bumps

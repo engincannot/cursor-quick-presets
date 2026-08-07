@@ -2,7 +2,7 @@
   "name": "cursor-quick-presets",
   "displayName": "Cursor Quick Presets",
   "description": "Easy-access model presets for Cursor. Switch models and reasoning levels from the Explorer sidebar.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "publisher": "EnginCannot",
   "license": "MIT",
   "repository": {
